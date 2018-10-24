@@ -14,7 +14,7 @@ private:
     int top;
     int bottom;
     int size;
-    WeightedQuickUnionUF f;
+    UF f;
 public:
     Percolation(int);
     void open(int, int);
