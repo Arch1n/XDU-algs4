@@ -55,6 +55,7 @@ double worker(){
         if(exp.percolates())
             break;
     }
+    std::cout << 1.0 * cnt / (N*N) <<std::endl;
     return 1.0 * cnt / (N*N);
 }
 
