@@ -23,13 +23,11 @@
 
 //#define DRAW
 
-#ifdef DRAW
 
 #define GAP 2
 
 constexpr int posx[] = {0, 505, 1010, 0  , 505, 1010};
 constexpr int posy[] = {0, 0  , 0   , 560, 560, 560};
-#endif
 
 
 #define SIZE 1000

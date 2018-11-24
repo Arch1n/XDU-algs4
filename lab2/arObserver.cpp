@@ -39,7 +39,7 @@ int arObserver::get_proc_mem(){
 }
 
 int arObserver::get_proc_virtualmem(){
-    char file_name[64]=;
+    char file_name[64];
     FILE *fd;
     char line_buff[512];
     sprintf(file_name,"/proc/%d/status",pid);
