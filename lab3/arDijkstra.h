@@ -8,14 +8,21 @@
 #include "arGraph.h"
 #include <limits>
 #include <unordered_map>
+#include <cassert>
 #include <ext/pb_ds/priority_queue.hpp>
 
+
+double get_dis(const point& A, const point& B);
 class arDijkstra: public arGraph{
+    const double EPS = 0.000001;
 public:
-    std::vector<double> dis;
-    std::vector<double> weight;
     using pqNode = std::pair<double, int>;
     using pq = __gnu_pbds::priority_queue<pqNode, std::greater<pqNode>, __gnu_pbds::pairing_heap_tag>;
+    std::vector<double> dis;
+    std::vector<double> weight;
+    std::vector<int> fa;
+    std::vector<pq::point_iterator> H;
+    std::list<int> last;
     arDijkstra(size_t n);
     void work(int s, int d);
 };

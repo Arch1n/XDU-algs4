@@ -5,6 +5,9 @@
 #ifndef LAB3_ARGRAPH_H
 #define LAB3_ARGRAPH_H
 
+
+
+
 #include <list>
 #include <iostream>
 #include <utility>
@@ -14,13 +17,14 @@
 
 using point = std::pair<int, int>;
 extern std::vector<point > arMap;
+extern std::vector<size_t> drawEdge;
 
 class arGraph {
 protected:
     using node = std::tuple<int, int, double>;
     std::vector<std::list<size_t>> G;
-    std::vector<node> edges;
 public:
+    std::vector<node> edges;
     arGraph() = default;
     arGraph(size_t n);
     void addEdge(const node&);
