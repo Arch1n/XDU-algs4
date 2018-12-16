@@ -20,7 +20,9 @@ public:
     using pq = __gnu_pbds::priority_queue<pqNode, std::greater<pqNode>, __gnu_pbds::pairing_heap_tag>;
     std::vector<double> dis;
     std::vector<double> weight;
+#ifdef AR_DRAW
     std::vector<int> fa;
+#endif
     std::vector<pq::point_iterator> H;
     std::list<int> last;
     arDijkstra(size_t n);

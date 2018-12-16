@@ -9,8 +9,11 @@ arDijkstra::arDijkstra(size_t n):arGraph(n){
     dis.resize(n);
     weight.resize(n);
     H.resize(n);
-    fa.resize(n);
     last.clear();
+#ifdef AR_DRAW
+    fa.resize(n);
+#endif
+
 }
 
 void arDijkstra::work(int s, int d) {
@@ -19,14 +22,18 @@ void arDijkstra::work(int s, int d) {
         std::fill(std::begin(H), std::end(H), Q.end());
         std::fill(std::begin(dis), std::end(dis), std::numeric_limits<double>::max());
         std::fill(std::begin(weight), std::end(weight), std::numeric_limits<double>::max());
+#ifdef AR_DRAW
         std::fill(std::begin(fa), std::end(fa), -1);
+#endif
     }
     else {
         for(auto c:last){
             dis[c] = std::numeric_limits<double>::max();
             weight[c] = std::numeric_limits<double>::max();
             H[c] = Q.end();
+#ifdef AR_DRAW
             fa[c] = -1;
+#endif
         }
         last.clear();
     }
@@ -40,24 +47,24 @@ void arDijkstra::work(int s, int d) {
         if(u == d)
             break;
         for(const auto& id: G[u]){
-            auto [from, to, val] = edges[id];
+            auto& [from, to, val] = edges[id];
 #ifdef AR_DRAW
             drawEdge.push_back(id);
 #endif
-            //std::cerr <<weight[u] <<std::endl;
-
             auto delta = weight[u] + val - get_dis(arMap[d], arMap[u]) + get_dis(arMap[d], arMap[to]);
             if(delta < weight[to] - EPS){
                 dis[to] = dis[u] + val;
                 weight[to] = delta;
-
                 last.push_back(to);
+#ifdef AR_DRAW
                 fa[to] = u;
+#endif
                 //std::cerr << to << " : " <<weight[to] << std::endl;
+                auto to_push = std::make_pair(weight[to], to);
                 if(H[to] == Q.end())
-                    H[to] = Q.push(std::make_pair(weight[to], to));
+                    H[to] = Q.push(to_push);
                 else
-                    Q.modify(H[to], std::make_pair(weight[to], to));
+                    Q.modify(H[to], to_push);
                 //std::cerr << to << " : " <<weight[to] << std::endl;
             }
         }

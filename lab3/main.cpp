@@ -21,9 +21,12 @@ int main(int argc, char** argv) {
     std::ifstream query_data("usa-1000long.txt");
     readData(G);
     int u, v;
+    std::vector<std::pair<int, int>> ins;
+    while(query_data >> u >> v)ins.emplace_back(u, v);
+
     auto start_time = std::chrono::system_clock::now();
-    while(query_data >> u >> v){
-        G->work(u, v);
+    for(const auto& c: ins){
+        G->work(c.first, c.second);
     }
     auto end_time = std::chrono::system_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds> (end_time - start_time);
@@ -44,8 +47,8 @@ int main(int argc, char** argv) {
 }
 
 double get_dis(const point& A, const point& B){
-    auto [ax, ay] = A;
-    auto [bx, by] = B;
+    const auto& [ax, ay] = A;
+    const auto& [bx, by] = B;
     auto z2 = static_cast<double>((ax - bx) * (ax - bx) + (ay - by) * (ay - by));
     return std::sqrt(z2);
 }
@@ -112,7 +115,7 @@ void draw(){
         }
         glEnd();
 
-        glPointSize(4.0f);
+        glPointSize(5.0f);
         glBegin(GL_POINTS);
         glColor3d(1.0, 0.0, 0.0);
         glVertex2i(arMap[u].first, arMap[u].second);
@@ -134,9 +137,11 @@ void draw(){
 
 
         glutSwapBuffers();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
     }
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    exit(EXIT_SUCCESS);
 }
 
 void changeSize(GLsizei w,GLsizei h) {
