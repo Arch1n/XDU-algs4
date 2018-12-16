@@ -11,16 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4308d0cb-c5d6-4f02-90ce-6e85b6533317" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arDijkstra.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/arDijkstra.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arDijkstra.h" beforeDir="false" afterPath="$PROJECT_DIR$/arDijkstra.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab3" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab3.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab3.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="4308d0cb-c5d6-4f02-90ce-6e85b6533317" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -135,11 +126,11 @@
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="347" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="351" />
     <option name="y" value="106" />
-    <option name="width" value="772" />
-    <option name="height" value="560" />
+    <option name="width" value="762" />
+    <option name="height" value="559" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -217,12 +208,12 @@
       <workItem from="1544626896073" duration="782000" />
       <workItem from="1544682032965" duration="461000" />
       <workItem from="1544876614473" duration="1518000" />
-      <workItem from="1544968465572" duration="1014000" />
+      <workItem from="1544968465572" duration="1307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32384000" />
+    <option name="totallyTimeSpent" value="32677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1410" extended-state="6" />
