@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 project(lab3)
-#add_definitions(-D AR_DRAW)
+add_definitions(-D AR_DRAW)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_VERBOSE_MAKEFILE ON)
